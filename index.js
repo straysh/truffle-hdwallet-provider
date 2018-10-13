@@ -46,7 +46,7 @@ function HDWalletProvider(
 
   this.engine = new ProviderEngine();
   this.engine.addProvider(new HookedSubprovider({
-    getAccounts: function(cb) { cb(null, [slef.address]) },
+    getAccounts: function(cb) { cb(null, [self.address]) },
     getPrivateKey: function(address, cb) {
       if (!self.address) { return cb('Account not found'); }
       else { cb(null, self.privkey); }
